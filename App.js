@@ -6,8 +6,8 @@
  * @flow
  */
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Button} from 'react-native';
+import React, { Component } from 'react';
+import { Platform, StyleSheet, Text, View, Button } from 'react-native';
 import CodePush from 'react-native-code-push';
 
 const instructions = Platform.select({
@@ -17,12 +17,14 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-export default class App extends Component {
+let codePushOptions = { checkFrequency: CodePush.CheckFrequency.MANUAL };
+
+class App extends Component {
 
   codePushSync = () => {
     CodePush.sync({
       updateDialog: true,
-      installMode: CodePush.installMode.IMMEDIATE
+      installMode: CodePush.InstallMode.IMMEDIATE
     });
   }
 
@@ -33,11 +35,13 @@ export default class App extends Component {
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
         <Button style={styles.codepush} onPress={() => this.codePushSync()} title="Code Sync" />
-        <Text style={{color: 'red'}}>Here is the code push result text</Text>
+        <Text style={{ color: 'red' }}>Here is the code push result text</Text>
       </View>
     );
   }
 }
+
+export default CodePush(codePushOptions)(App);
 
 const styles = StyleSheet.create({
   container: {
