@@ -17,8 +17,8 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-
-export default class App extends Component {
+type Props = {};
+export default class App extends Component<Props> {
 
   codePushSync = () => {
     CodePush.sync({
