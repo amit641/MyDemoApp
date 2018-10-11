@@ -36,7 +36,7 @@ class App extends Component {
         <Text style={styles.instructions}>{instructions}</Text>
         <Button style={styles.codepush} onPress={() => this.codePushSync()} title="Code Sync" />
         <Text style={{ color: 'red' }}>Hurray!!! Code push work like charm.</Text>
-        <Text>New Text</Text>
+        <Text>Finally!!! It works</Text>
       </View>
     );
   }
