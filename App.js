@@ -7,7 +7,7 @@
  */
 
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View, Button } from 'react-native';
+import { Platform, StyleSheet, Text, View, Button, Image } from 'react-native';
 import codePush from 'react-native-code-push';
 
 const instructions = Platform.select({
@@ -37,6 +37,7 @@ class App extends Component {
         {/* <Button style={styles.codepush} onPress={() => this.codePushSync()} title="Code Sync" /> */}
         <Text style={{ color: 'red' }}>Hurray!!! Code push work like charm.</Text>
         <Text>Finally!!! It works</Text>
+        <Image style={{width: 100, height: 100}} src={{uri: 'https://user-images.githubusercontent.com/544280/42960643-66d498ac-8b5a-11e8-8946-7224eefea6a5.jpg'}} />
       </View>
     );
   }
