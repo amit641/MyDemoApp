@@ -8,7 +8,7 @@
 
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View, Button } from 'react-native';
-import CodePush from 'react-native-code-push';
+import codePush from 'react-native-code-push';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -17,14 +17,14 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-let codePushOptions = { checkFrequency: CodePush.CheckFrequency.MANUAL };
+let codePushOptions = { checkFrequency: codePush.CheckFrequency.MANUAL };
 
 class App extends Component {
 
   codePushSync = () => {
-    CodePush.sync({
+    codePush.sync({
       updateDialog: true,
-      installMode: CodePush.InstallMode.IMMEDIATE
+      installMode: codePush.InstallMode.IMMEDIATE
     });
   }
 
@@ -41,7 +41,7 @@ class App extends Component {
   }
 }
 
-export default CodePush(codePushOptions)(App);
+export default codePush(codePushOptions)(App);
 
 const styles = StyleSheet.create({
   container: {
