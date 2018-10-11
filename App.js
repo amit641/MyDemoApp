@@ -17,7 +17,7 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-let codePushOptions = { checkFrequency: codePush.CheckFrequency.MANUAL };
+let codePushOptions = { checkFrequency: codePush.CheckFrequency.ON_APP_RESUME };
 
 class App extends Component {
 
@@ -34,7 +34,7 @@ class App extends Component {
         <Text style={styles.welcome}>Welcome to React Native!</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
-        <Button style={styles.codepush} onPress={() => this.codePushSync()} title="Code Sync" />
+        {/* <Button style={styles.codepush} onPress={() => this.codePushSync()} title="Code Sync" /> */}
         <Text style={{ color: 'red' }}>Hurray!!! Code push work like charm.</Text>
         <Text>Finally!!! It works</Text>
       </View>
